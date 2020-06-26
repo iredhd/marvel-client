@@ -5,11 +5,18 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "commit": "git-cz",
+    "release": "release-it --no-npm.publish"
   },
   "dependencies": {
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "git-cz": "^4.7.0",
+    "release-it": "^13.6.3"
   }
 }

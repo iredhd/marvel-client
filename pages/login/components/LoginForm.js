@@ -1,21 +1,28 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useRef } from 'react';
 import styled from 'styled-components';
 import { Form } from '@unform/web';
 import i18n from 'i18n-js';
 
 import LoginInput from './LoginInput';
 import LoginButton from './LoginButton';
+import { Auth } from '../../../services';
 
 const LoginForm = () => {
-  const handleSubmit = useCallback(() => {
-    console.log('submit');
+  const formRef = useRef(null);
+
+  const handleSubmit = useCallback(data => {
+    const response = Auth.login(data.userOrEmail, data.password);
+    console.log(response);
   });
 
   return (
-    <StyledLoginForm onSubmit={handleSubmit}>
+    <StyledLoginForm
+      ref={formRef}
+      onSubmit={handleSubmit}
+    >
       <LoginInput
-        name="email"
-        label={i18n.t('email')}
+        name="userOrEmail"
+        label={i18n.t('userOrEmail')}
       />
       <LoginInput
         name="password"

@@ -1,13 +1,19 @@
 const Translations = {
   en: {
-    email: 'E-mail',
+    userOrEmail: 'User or e-mail',
     password: 'Password',
-    login: 'Login'
+    login: 'Login',
+    userNotFound: 'User not found.',
+    wrongPassword: 'Wrong password.',
+    internalError: 'Internal error, please contact the support.'
   },
   'pt-BR': {
-    email: 'E-mail',
+    userOrEmail: 'Usuário ou e-mail',
     password: 'Senha',
-    login: 'Entrar'
+    login: 'Entrar',
+    userNotFound: 'Usuário não encontrado.',
+    wrongPassword: 'Senha incorreta.',
+    internalError: 'Erro interno, por favor entre em contato com o suporte.'
   }
 };
 

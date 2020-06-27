@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
 import { TextField } from '@material-ui/core';
 import { useField } from '@unform/core';
 import PropTypes from 'prop-types';
@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const Input = ({ name, ...rest }) => {
   const inputRef = useRef(null);
 
-  const { fieldName, defaultValue, registerField } = useField(name);
+  const { fieldName, registerField } = useField(name);
 
   useEffect(() => {
     registerField({
@@ -16,10 +16,14 @@ const Input = ({ name, ...rest }) => {
     });
   }, [fieldName, registerField]);
 
+  const handleChange = useCallback(({ currentTarget }) => {
+    inputRef.current.value = currentTarget.value;
+  });
+
   return (
     <TextField
       ref={inputRef}
-      defaultValue={defaultValue}
+      onChange={handleChange}
       {...rest}
     />
   );

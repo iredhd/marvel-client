@@ -6,13 +6,20 @@ import * as Yup from 'yup';
 import Alert from '@material-ui/lab/Alert';
 import { Collapse, IconButton } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
+import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/router';
 
 import LoginInput from './LoginInput';
 import LoginButton from './LoginButton';
 import { Auth } from '../../../services';
+import { login } from '../../../store/actions/User';
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
+
   const formRef = useRef(null);
+
   const [error, setError] = useState({
     isVisible: false,
     message: null
@@ -31,7 +38,7 @@ const LoginForm = () => {
         abortEarly: false,
       });
 
-      const { error } = Auth.login(data.userOrEmail, data.password);
+      const { error, ...user } = Auth.login(data.userOrEmail, data.password);
 
       if (error) {
         return setError({
@@ -39,6 +46,10 @@ const LoginForm = () => {
           message: error
         });
       }
+
+      dispatch(login(user));
+
+      router.push('/home');
     } catch (err) {
       const validationErrors = {};
 

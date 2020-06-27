@@ -1,4 +1,7 @@
 import i18n from 'i18n-js';
+import jwt from 'jsonwebtoken';
+import { Cookies } from 'react-cookie';
+
 import users from '../assets/users.json';
 
 const Auth = {
@@ -24,9 +27,35 @@ const Auth = {
       };
     }
 
+    Auth.registerToken(user);
+
     return {
       ...user
     };
+  },
+  registerToken: (user) => {
+    const token = jwt.sign(user, process.env.REACT_APP_SECRET_KEY, { mutatePayload: true });
+
+    const cookies = new Cookies();
+    cookies.set('token', token);
+  },
+  handleAuthSSR: async ctx => {
+    // const cookies = new Cookies();
+    // console.log(cookies.get('token'));
+    // if (['/', '/login'].includes(ctx.req.url)) {
+    //   return;
+    // }
+
+    // const token = ctx.req.headers.cookie?.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, '$1');
+
+    // try {
+    //   jwt.verify(token, process.env.REACT_APP_SECRET_KEY);
+    // } catch ({ message }) {
+    //   ctx.res.writeHead(302, {
+    //     Location: '/'
+    //   });
+    //   ctx.res.end();
+    // }
   },
   handleErrors: (code) => {
     switch (code) {

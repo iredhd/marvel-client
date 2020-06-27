@@ -1,5 +1,9 @@
-import Layout from './Layout';
+import PageLayout from './PageLayout';
+import LoginGrid from './LoginGrid';
+import LoginForm from './LoginForm';
 
 export {
-  Layout
-}
+  PageLayout,
+  LoginGrid,
+  LoginForm
+};

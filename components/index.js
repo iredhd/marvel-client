@@ -7,5 +7,5 @@ export {
   Head,
   Layout,
   LanguageSwitcher,
-  Input
+  Input,
 };

@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const Input = ({ name, ...rest }) => {
   const inputRef = useRef(null);
 
-  const { fieldName, registerField } = useField(name);
+  const { fieldName, registerField, error, clearError } = useField(name);
 
   useEffect(() => {
     registerField({
@@ -18,12 +18,18 @@ const Input = ({ name, ...rest }) => {
 
   const handleChange = useCallback(({ currentTarget }) => {
     inputRef.current.value = currentTarget.value;
+
+    if (currentTarget.value.trim()) {
+      clearError();
+    }
   });
 
   return (
     <TextField
       ref={inputRef}
       onChange={handleChange}
+      helperText={error}
+      error={!!error}
       {...rest}
     />
   );

@@ -6,8 +6,6 @@ import LanguageIcon from '@material-ui/icons/Language';
 import i18n from 'i18n-js';
 import { useRouter } from 'next/router';
 
-import View from './View';
-
 const LanguageSwitcher = () => {
   const router = useRouter();
   const [language, setLanguage] = React.useState(i18n.currentLocale());
@@ -33,11 +31,13 @@ const LanguageSwitcher = () => {
   );
 };
 
-const LanguageSwitcherContainer = styled(View)`
-  position: absolute;
-  bottom: 0;
+const LanguageSwitcherContainer = styled.div`
+  display: flex;
   padding-bottom: 10px;
+  padding-top: 10px;
   align-items: center;
+  position: fixed;
+  bottom: 0;
 `;
 
 const StyledLaguageIcon = styled(LanguageIcon)`

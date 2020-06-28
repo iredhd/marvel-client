@@ -19,7 +19,8 @@ const Hero = ({ hero }) => {
   return (
     <Panel
       item
-      xs={5}
+      xs={10}
+      sm={8}
     >
       <StyledPaper
         elevation={3}

@@ -11,11 +11,8 @@ const Home = () => (
     <LoginGrid container>
       <Grid
         item
-        xs={6}
-        xl={4}
-        lg={4}
+        xs={10}
         md={4}
-        sm={4}
       >
         <Paper
           elevation={3}

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 import Head from './Head';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -14,9 +14,7 @@ const PageLayout = createGlobalStyle`
 
   #__next {
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow-y: auto;
     background-image: url(${background});
     background-repeat: no-repeat;
     background-size: cover;
@@ -24,12 +22,22 @@ const PageLayout = createGlobalStyle`
   }
 `;
 
+const StyledContainer = styled.div`
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%
+`;
+
 const Layout = ({ children }) => (
   <>
     <PageLayout />
     <Head />
-    <LanguageSwitcher />
-    {children}
+    <StyledContainer>
+      {children}
+      <LanguageSwitcher />
+    </StyledContainer>
   </>
 );
 

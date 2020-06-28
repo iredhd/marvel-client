@@ -29,7 +29,8 @@ const Comics = ({ comics }) => {
   return (
     <Panel
       item
-      xs={6}
+      xs={10}
+      sm={6}
     >
       <Paper
         elevation={3}

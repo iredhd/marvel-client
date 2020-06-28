@@ -4,6 +4,8 @@ import { Cookies } from 'react-cookie';
 
 import users from '../assets/users.json';
 
+const cookies = new Cookies();
+
 const Auth = {
   login: (userOrEmail, password) => {
     const user = users.reduce((prev, current) => {
@@ -36,35 +38,47 @@ const Auth = {
   registerToken: (user) => {
     const token = jwt.sign(user, process.env.REACT_APP_SECRET_KEY, { mutatePayload: true });
 
-    const cookies = new Cookies();
     cookies.set('token', token);
   },
-  clearToken: () => {
-    const cookies = new Cookies();
+  clearToken: () => new Promise(resolve => {
     cookies.remove('token');
-  },
+    resolve();
+  }),
   decodeToken: (ctx) => {
     const token = ctx.req.headers.cookie?.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, '$1');
 
     return jwt.verify(token, process.env.REACT_APP_SECRET_KEY);
   },
   handleAuthSSR: async ctx => {
-    // const cookies = new Cookies();
-    // console.log(cookies.get('token'));
-    // if (['/', '/login'].includes(ctx.req.url)) {
-    //   return;
-    // }
+    const token = ctx.req?.headers?.cookie?.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, '$1');
 
-    // const token = ctx.req.headers.cookie?.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, '$1');
+    if (!token && ctx?.req?.url !== '/login') {
+      await Auth.redirectTo(ctx.res, '/login');
+      return false;
+    }
 
-    // try {
-    //   jwt.verify(token, process.env.REACT_APP_SECRET_KEY);
-    // } catch ({ message }) {
-    //   ctx.res.writeHead(302, {
-    //     Location: '/'
-    //   });
-    //   ctx.res.end();
-    // }
+    if (!token && ctx?.req?.url === '/login') {
+      return true;
+    }
+
+    try {
+      jwt.verify(token, process.env.REACT_APP_SECRET_KEY);
+
+      if (ctx?.req?.url === '/login') {
+        await Auth.redirectTo(ctx.res, '/home');
+        return false;
+      }
+      return true;
+    } catch ({ message }) {
+      await Auth.redirectTo(ctx.res, '/login');
+      return false;
+    }
+  },
+  redirectTo: async (res, Location) => {
+    await res.writeHead(302, {
+      Location
+    });
+    return res.end();
   },
   handleErrors: (code) => {
     switch (code) {

@@ -3,19 +3,17 @@ import { AppBar as MaterializeAppBar, Toolbar, Typography, Button } from '@mater
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import i18n from 'i18n-js';
-import { useRouter } from 'next/router';
 
 import { logout } from '../../../store/actions/User';
 
 const AppBar = () => {
   const dispatch = useDispatch();
-  const router = useRouter();
   const name = useSelector(({ user }) => user.name);
 
   const handleLogout = useCallback(() => {
     dispatch(logout());
 
-    router.push('/login');
+    window.location.href = '/login';
   });
 
   return (

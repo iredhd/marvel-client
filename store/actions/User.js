@@ -14,8 +14,7 @@ export const clearData = () => {
   });
 };
 
-export const logout = () => dispatch => {
-  Auth.clearToken();
-
+export const logout = () => async dispatch => {
+  await Auth.clearToken();
   dispatch(clearData());
 };

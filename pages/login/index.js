@@ -27,7 +27,7 @@ const Home = () => (
   </Layout>
 );
 
-export const getStaticProps = async (ctx) => {
+export const getServerSideProps = async (ctx) => {
   await Auth.handleAuthSSR(ctx);
 
   return {

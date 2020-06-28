@@ -6,7 +6,7 @@ import { Layout } from '../../components';
 import AppBar from './components/AppBar';
 import Comics from './components/Comics';
 import Hero from './components/Hero';
-import { Marvel } from '../../services';
+import { Marvel, Auth } from '../../services';
 
 const Home = ({ comics, hero }) => {
   return (
@@ -31,6 +31,14 @@ const Home = ({ comics, hero }) => {
 };
 
 export const getServerSideProps = async ctx => {
+  const v = await Auth.handleAuthSSR(ctx);
+
+  if (!v) {
+    return {
+      props: {}
+    };
+  }
+
   const { comics, hero } = await Marvel.initialLoad(ctx);
 
   return {

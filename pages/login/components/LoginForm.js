@@ -13,6 +13,7 @@ import LoginInput from './LoginInput';
 import LoginButton from './LoginButton';
 import { Auth } from '../../../services';
 import { storeData } from '../../../store/actions/User';
+import { LoadingModal } from '../../../components';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -20,12 +21,15 @@ const LoginForm = () => {
 
   const formRef = useRef(null);
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const [error, setError] = useState({
     isVisible: false,
     message: null
   });
 
   const handleSubmit = useCallback(async data => {
+    setIsLoading(true);
     try {
       formRef.current.setErrors({});
 
@@ -41,6 +45,7 @@ const LoginForm = () => {
       const { error, ...user } = Auth.login(data.userOrEmail, data.password);
 
       if (error) {
+        setIsLoading(false);
         return setError({
           isVisible: true,
           message: error
@@ -58,6 +63,7 @@ const LoginForm = () => {
           validationErrors[error.path] = error.message;
         });
 
+        setIsLoading(false);
         formRef.current.setErrors(validationErrors);
       }
     }
@@ -73,7 +79,7 @@ const LoginForm = () => {
   useEffect(() => {
     return handleCloseAlert;
   }, []);
-
+  console.log('isVisible', isLoading);
   return (
     <StyledLoginForm
       ref={formRef}
@@ -112,6 +118,9 @@ const LoginForm = () => {
       >
         {i18n.t('login')}
       </LoginButton>
+      <LoadingModal
+        isVisible={isLoading}
+      />
     </StyledLoginForm>
   );
 };

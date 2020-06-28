@@ -24,10 +24,11 @@ const PageLayout = createGlobalStyle`
 
 const StyledContainer = styled.div`
   display: flex;
-  justify-items: center;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%
+  width: 100%;
+  min-height: 100%;
 `;
 
 const Layout = ({ children }) => (

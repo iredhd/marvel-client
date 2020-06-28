@@ -6,7 +6,7 @@ import LoginGrid from './components/LoginGrid';
 import LoginForm from './components/LoginForm';
 import { Auth } from '../../services';
 
-const Home = () => (
+const Login = () => (
   <Layout>
     <LoginGrid container>
       <Grid
@@ -32,4 +32,4 @@ export const getServerSideProps = async (ctx) => {
   };
 };
 
-export default Home;
+export default Login;

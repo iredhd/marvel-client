@@ -34,10 +34,12 @@ const LanguageSwitcher = () => {
 const LanguageSwitcherContainer = styled.div`
   display: flex;
   padding-bottom: 10px;
-  padding-top: 10px;
+  padding-top: 10px;   
+  padding-left: 10px;   
   align-items: center;
   position: fixed;
   bottom: 0;
+  left: 0;
 `;
 
 const StyledLaguageIcon = styled(LanguageIcon)`

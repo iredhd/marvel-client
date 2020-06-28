@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Hero = ({ hero }) => {
+const HomeHero = ({ hero }) => {
   const classes = useStyles();
 
   return (
@@ -66,7 +66,7 @@ const StyledAvatar = styled(Avatar)`
   margin-bottom: 10px;
 `;
 
-Hero.propTypes = {
+HomeHero.propTypes = {
   hero: PropTypes.shape({
     name: PropTypes.string.isRequired,
     description: PropTypes.string,
@@ -78,4 +78,4 @@ Hero.propTypes = {
   }).isRequired
 };
 
-export default Hero;
+export default HomeHero;

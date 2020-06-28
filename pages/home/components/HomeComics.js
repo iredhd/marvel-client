@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import { Marvel } from '../../../services';
 import { Panel } from '../../../components';
 
-const Comics = ({ comics }) => {
+const HomeComics = ({ comics }) => {
   const totalPages = Math.ceil(comics.total / Marvel.ITEMS_PER_PAGE);
   const heroId = useSelector(({ user }) => user.heroId);
 
@@ -102,7 +102,7 @@ const PaginationContainer = styled.div`
     justify-content: center;
 `;
 
-Comics.propTypes = {
+HomeComics.propTypes = {
   comics: PropTypes.shape({
     total: PropTypes.number,
     limit: PropTypes.number,
@@ -118,4 +118,4 @@ Comics.propTypes = {
   }).isRequired
 };
 
-export default Comics;
+export default HomeComics;

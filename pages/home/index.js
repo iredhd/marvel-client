@@ -3,27 +3,27 @@ import { Grid } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
 import { Layout } from '../../components';
-import AppBar from './components/AppBar';
-import Comics from './components/Comics';
+import HomeAppBar from './components/HomeAppBar';
+import HomeComics from './components/HomeComics';
 import HomeContainer from './components/HomeContainer';
-import Hero from './components/Hero';
+import HomeHero from './components/HomeHero';
 import { Marvel, Auth } from '../../services';
 
 const Home = ({ comics, hero }) => {
   return (
     <Layout>
-      <AppBar />
+      <HomeAppBar />
       <HomeContainer>
         <Grid
           item
           xs={1}
         />
-        <Hero hero={hero} />
+        <HomeHero hero={hero} />
         <Grid
           item
           xs={1}
         />
-        <Comics comics={comics} />
+        <HomeComics comics={comics} />
         <Grid
           item
           xs={1}

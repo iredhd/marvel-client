@@ -1,30 +1,83 @@
 import React, { useState, useCallback } from 'react';
-import { Paper, Divider, ListItem, ListItemAvatar, Avatar, ListItemText, Typography, List, Link } from '@material-ui/core';
+import { Paper, useTheme, useMediaQuery, Divider, ListItem, ListItemAvatar, Avatar, ListItemText, Typography, List, Link, CircularProgress } from '@material-ui/core';
 import { Pagination } from '@material-ui/lab';
 import moment from 'moment';
 import i18n from 'i18n-js';
 import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import FlatList from 'flatlist-react';
 
 import { Marvel } from '../../../services';
 import { Panel } from '../../../components';
 
 const HomeComics = ({ comics }) => {
+  const theme = useTheme();
+  const upMd = useMediaQuery(theme.breakpoints.up('md'));
+
   const totalPages = Math.ceil(comics.total / Marvel.ITEMS_PER_PAGE);
   const heroId = useSelector(({ user }) => user.heroId);
 
   const [comicsToShow, setComicsToShow] = useState(comics.results);
+  const [isLoading, setIsLoading] = useState(false);
 
   const [page, setPage] = useState(1);
 
   const handlePaginate = useCallback(async (_, value) => {
     setPage(value);
+    setIsLoading(true);
 
     const { error, ...newCommics } = await Marvel.getComics(heroId, Marvel.ITEMS_PER_PAGE, (value - 1) * Marvel.ITEMS_PER_PAGE);
 
+    setIsLoading(false);
     setComicsToShow(newCommics.results);
   });
+
+  const renderItem = (comic, index) => {
+    return (
+      <React.Fragment key={comic.id.toString()}>
+        <ListItem
+          alignItems="center"
+        >
+          <ListItemAvatar>
+            <Avatar
+              variant="rounded"
+              alt={comic.title}
+              src={Marvel.handleThumbnail(comic.thumbnail)}
+            />
+          </ListItemAvatar>
+          <ListItemText
+            primary={(
+              <Typography
+                component="p"
+                variant="body1"
+                color="textPrimary"
+              >
+                <Link
+                  href={Marvel.handleDetailsLink(comic.urls)}
+                  target="_blank"
+                >
+                  {comic.title}
+                </Link>
+              </Typography>
+          )}
+            secondary={(
+              <Typography
+                component="span"
+                variant="body2"
+                color="textPrimary"
+              >
+                {moment(comic.modified).isValid() ? moment(comic.modified).locale(i18n.currentLocale()).format('LLLL') : ''}
+              </Typography>
+        )}
+          />
+        </ListItem>
+        { index < comicsToShow.length - 1  && (
+        <Divider variant="fullWidth" component="li" />
+        )}
+      </React.Fragment>
+    );
+  };
 
   return (
     <Panel
@@ -36,54 +89,19 @@ const HomeComics = ({ comics }) => {
         elevation={3}
       >
         <List>
-          {comicsToShow.map((comic, index) => {
-            return (
-              <React.Fragment key={comic.id.toString()}>
-                <ListItem
-                  alignItems="center"
-                >
-                  <ListItemAvatar>
-                    <Avatar
-                      variant="rounded"
-                      alt={comic.title}
-                      src={Marvel.handleThumbnail(comic.thumbnail)}
-                    />
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary={(
-                      <Typography
-                        component="p"
-                        variant="body1"
-                        color="textPrimary"
-                      >
-                        <Link
-                          href={Marvel.handleDetailsLink(comic.urls)}
-                          target="_blank"
-                        >
-                          {comic.title}
-                        </Link>
-                      </Typography>
-                    )}
-                    secondary={(
-                      <Typography
-                        component="span"
-                        variant="body2"
-                        color="textPrimary"
-                      >
-                        {moment(comic.modified).isValid() ? moment(comic.modified).locale(i18n.currentLocale()).format('LLLL') : ''}
-                      </Typography>
-                  )}
-                  />
-                </ListItem>
-                { index < comicsToShow.length - 1  && (
-                  <Divider variant="fullWidth" component="li" />
-                )}
-              </React.Fragment>
-            );
-          })}
+          { isLoading ? (
+            <LoadingContainer>
+              <CircularProgress />
+            </LoadingContainer>
+          ) : (
+            <FlatList
+              list={comicsToShow}
+              renderItem={renderItem}
+            />
+          )}
           <PaginationContainer>
             <Pagination
-              siblingCount={0}
+              siblingCount={upMd ? 1 : 0}
               boundaryCount={1}
               count={totalPages}
               color="primary"
@@ -96,6 +114,14 @@ const HomeComics = ({ comics }) => {
     </Panel>
   );
 };
+
+const LoadingContainer = styled.div`
+  display: flex;
+  flex: 1;
+  width: inherit;
+  justify-content: center;
+  padding: 10px;
+`;
 
 const PaginationContainer = styled.div`
     display: flex;

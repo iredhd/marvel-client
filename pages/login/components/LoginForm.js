@@ -79,7 +79,7 @@ const LoginForm = () => {
   useEffect(() => {
     return handleCloseAlert;
   }, []);
-  console.log('isVisible', isLoading);
+
   return (
     <StyledLoginForm
       ref={formRef}

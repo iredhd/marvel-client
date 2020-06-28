@@ -20,6 +20,7 @@
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "flatlist-react": "^1.4.2",
+    "framer-motion": "^1.11.1",
     "i18n-js": "^3.7.0",
     "jsonwebtoken": "^8.5.1",
     "md5": "^2.2.1",

@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 import { Marvel } from '../../../services';
 import { Panel } from '../../../components';
+import { Animations } from '../../../utils';
 
 const useStyles = makeStyles((theme) => ({
   large: {
@@ -16,11 +17,29 @@ const useStyles = makeStyles((theme) => ({
 const HomeHero = ({ hero }) => {
   const classes = useStyles();
 
+  const panelAnimation = {
+    hidden: {
+      x: -1000
+    },
+    visible: {
+      x: 0,
+      transition: {
+        ...Animations.spring,
+        delay: 0.5,
+        staggerChildren: 0.075,
+        delayChildren: 0.7,
+      },
+    },
+  };
+
   return (
     <Panel
       item
       xs={10}
       sm={8}
+      variants={panelAnimation}
+      initial="hidden"
+      animate="visible"
     >
       <StyledPaper
         elevation={3}

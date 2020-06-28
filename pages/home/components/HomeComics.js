@@ -10,10 +10,26 @@ import FlatList from 'flatlist-react';
 
 import { Marvel } from '../../../services';
 import { Panel } from '../../../components';
+import { Animations } from '../../../utils';
 
 const HomeComics = ({ comics }) => {
   const theme = useTheme();
   const upMd = useMediaQuery(theme.breakpoints.up('md'));
+
+  const panelAnimation = {
+    hidden: {
+      x: 1000
+    },
+    visible: {
+      x: 0,
+      transition: {
+        ...Animations.spring,
+        delay: 0.5,
+        staggerChildren: 0.075,
+        delayChildren: 0.7,
+      },
+    },
+  };
 
   const totalPages = Math.ceil(comics.total / Marvel.ITEMS_PER_PAGE);
   const heroId = useSelector(({ user }) => user.heroId);
@@ -84,6 +100,9 @@ const HomeComics = ({ comics }) => {
       item
       xs={10}
       sm={6}
+      initial="hidden"
+      animate="visible"
+      variants={panelAnimation}
     >
       <Paper
         elevation={3}

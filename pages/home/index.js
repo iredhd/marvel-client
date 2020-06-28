@@ -3,7 +3,9 @@ import { Grid } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
 import { Layout } from '../../components';
-import { AppBar, Comics, Hero } from './components';
+import AppBar from './components/AppBar';
+import Comics from './components/Comics';
+import Hero from './components/Hero';
 import { Marvel } from '../../services';
 
 const Home = ({ comics, hero }) => {

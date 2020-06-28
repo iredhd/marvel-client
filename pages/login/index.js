@@ -2,7 +2,8 @@ import React from 'react';
 import { Grid, Paper } from '@material-ui/core/';
 
 import { Layout } from '../../components';
-import { LoginGrid, LoginForm } from './components';
+import LoginGrid from './components/LoginGrid';
+import LoginForm from './components/LoginForm';
 import { Auth } from '../../services';
 
 const Home = () => (

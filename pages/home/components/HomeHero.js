@@ -2,6 +2,7 @@ import React from 'react';
 import { Paper,  Avatar, Typography, makeStyles, Link } from '@material-ui/core';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import i18n from 'i18n-js';
 
 import { Marvel } from '../../../services';
 import { Panel } from '../../../components';
@@ -35,8 +36,8 @@ const HomeHero = ({ hero }) => {
   return (
     <Panel
       item
-      xs={10}
-      sm={8}
+      xs={12}
+      sm={5}
       variants={panelAnimation}
       initial="hidden"
       animate="visible"
@@ -66,7 +67,7 @@ const HomeHero = ({ hero }) => {
           align="center"
           gutterBottom
         >
-          {hero.description}
+          {hero.description ? hero.description : i18n.t('noDescriptionFound')}
         </Typography>
       </StyledPaper>
     </Panel>

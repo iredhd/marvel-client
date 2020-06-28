@@ -49,57 +49,68 @@ const HomeComics = ({ comics }) => {
     setComicsToShow(newCommics.results);
   });
 
-  const renderItem = (comic, index) => {
-    return (
-      <React.Fragment key={comic.id.toString()}>
-        <ListItem
-          alignItems="center"
-        >
-          <ListItemAvatar>
-            <Avatar
-              variant="rounded"
-              alt={comic.title}
-              src={Marvel.handleThumbnail(comic.thumbnail)}
-            />
-          </ListItemAvatar>
-          <ListItemText
-            primary={(
-              <Typography
-                component="p"
-                variant="body1"
-                color="textPrimary"
-              >
-                <Link
-                  href={Marvel.handleDetailsLink(comic.urls)}
-                  target="_blank"
-                >
-                  {comic.title}
-                </Link>
-              </Typography>
-          )}
-            secondary={(
-              <Typography
-                component="span"
-                variant="body2"
-                color="textPrimary"
-              >
-                {moment(comic.modified).isValid() ? moment(comic.modified).locale(i18n.currentLocale()).format('LLLL') : ''}
-              </Typography>
-        )}
+  const renderItem = (comic, index) => (
+    <React.Fragment key={comic.id.toString()}>
+      <ListItem
+        alignItems="center"
+      >
+        <ListItemAvatar>
+          <Avatar
+            variant="rounded"
+            alt={comic.title}
+            src={Marvel.handleThumbnail(comic.thumbnail)}
           />
-        </ListItem>
-        { index < comicsToShow.length - 1  && (
-        <Divider variant="fullWidth" component="li" />
+        </ListItemAvatar>
+        <ListItemText
+          primary={(
+            <Typography
+              component="p"
+              variant="body1"
+              color="textPrimary"
+            >
+              <Link
+                href={Marvel.handleDetailsLink(comic.urls)}
+                target="_blank"
+              >
+                {comic.title}
+              </Link>
+            </Typography>
+          )}
+          secondary={(
+            <Typography
+              component="span"
+              variant="body2"
+              color="textPrimary"
+            >
+              {moment(comic.modified).isValid() ? moment(comic.modified).locale(i18n.currentLocale()).format('LLLL') : ''}
+            </Typography>
         )}
-      </React.Fragment>
-    );
-  };
+        />
+      </ListItem>
+      { index < comicsToShow.length - 1  && (
+        <Divider variant="fullWidth" component="li" />
+      )}
+    </React.Fragment>
+  );
+
+  const renderWhenEmpty = () => (
+    <EmptyContainer>
+      <Typography
+        component="span"
+        variant="h6"
+        color="textPrimary"
+        align="center"
+      >
+        {i18n.t('noComicsFound')}
+      </Typography>
+    </EmptyContainer>
+  );
 
   return (
     <Panel
       item
-      xs={10}
-      sm={6}
+      xs={12}
+      sm={4}
       initial="hidden"
       animate="visible"
       variants={panelAnimation}
@@ -116,18 +127,21 @@ const HomeComics = ({ comics }) => {
             <FlatList
               list={comicsToShow}
               renderItem={renderItem}
+              renderWhenEmpty={renderWhenEmpty}
             />
           )}
-          <PaginationContainer>
-            <Pagination
-              siblingCount={upMd ? 1 : 0}
-              boundaryCount={1}
-              count={totalPages}
-              color="primary"
-              page={page}
-              onChange={handlePaginate}
-            />
-          </PaginationContainer>
+          {totalPages && (
+            <PaginationContainer>
+              <Pagination
+                siblingCount={upMd ? 1 : 0}
+                boundaryCount={1}
+                count={totalPages}
+                color="primary"
+                page={page}
+                onChange={handlePaginate}
+              />
+            </PaginationContainer>
+          )}
         </List>
       </Paper>
     </Panel>
@@ -143,8 +157,14 @@ const LoadingContainer = styled.div`
 `;
 
 const PaginationContainer = styled.div`
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+`;
+
+const EmptyContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 `;
 
 HomeComics.propTypes = {

@@ -9,7 +9,8 @@ const Translations = {
     userOrEmailIsRequired: 'User/e-mail is required to login.',
     passwordIsRequired: 'Password is required to login.',
     wellcomeBack: 'Wellcome back',
-    logout: 'Logout'
+    logout: 'Logout',
+    marvelFetchError: 'Error calling the Marvel API. Please, try again later.'
   },
   'pt-BR': {
     userOrEmail: 'Usuário ou e-mail',
@@ -21,7 +22,8 @@ const Translations = {
     userOrEmailIsRequired: 'Usuário/e-mail é necessário para o login.',
     passwordIsRequired: 'Senha é necessária para o login.',
     wellcomeBack: 'Bem-vindo de volta',
-    logout: 'Sair'
+    logout: 'Sair',
+    marvelFetchError: 'Erro na consulta com a API da Marvel. Por favor, tente novamente mais tarde.'
   }
 };
 

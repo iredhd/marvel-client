@@ -12,7 +12,7 @@ import { useRouter } from 'next/router';
 import LoginInput from './LoginInput';
 import LoginButton from './LoginButton';
 import { Auth } from '../../../services';
-import { login } from '../../../store/actions/User';
+import { storeData } from '../../../store/actions/User';
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -47,7 +47,7 @@ const LoginForm = () => {
         });
       }
 
-      dispatch(login(user));
+      dispatch(storeData(user));
 
       router.push('/home');
     } catch (err) {

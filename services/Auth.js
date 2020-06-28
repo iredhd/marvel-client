@@ -39,6 +39,15 @@ const Auth = {
     const cookies = new Cookies();
     cookies.set('token', token);
   },
+  clearToken: () => {
+    const cookies = new Cookies();
+    cookies.remove('token');
+  },
+  decodeToken: (ctx) => {
+    const token = ctx.req.headers.cookie?.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, '$1');
+
+    return jwt.verify(token, process.env.REACT_APP_SECRET_KEY);
+  },
   handleAuthSSR: async ctx => {
     // const cookies = new Cookies();
     // console.log(cookies.get('token'));

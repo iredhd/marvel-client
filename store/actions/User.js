@@ -1,8 +1,5 @@
 import { ActionTypes } from '.';
-
-export const login = user => dispatch => {
-  dispatch(storeData(user));
-};
+import { Auth } from '../../services';
 
 export const storeData = (payload) => {
   return ({
@@ -15,4 +12,10 @@ export const clearData = () => {
   return ({
     type: ActionTypes.CLEAR_USER
   });
+};
+
+export const logout = () => dispatch => {
+  Auth.clearToken();
+
+  dispatch(clearData());
 };

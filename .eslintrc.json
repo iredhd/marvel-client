@@ -21,9 +21,13 @@
   "plugins": [
     "react"
   ],
+  "parser": "babel-eslint",
   "rules": {
     "indent": 2,
-    "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
+    "no-mixed-spaces-and-tabs": [
+      "error",
+      "smart-tabs"
+    ],
     "no-tabs": "off",
     "prefer-const": "off",
     "no-await-in-loop": "off",
@@ -40,7 +44,7 @@
     "global-require": "off",
     "prefer-template": "off",
     "max-len": "off",
-    "arrow-parens": "off",    
+    "arrow-parens": "off",
     "no-confusing-arrow": "off",
     "arrow-body-style": "off",
     "no-shadow": "off",
@@ -54,10 +58,8 @@
     "import/no-named-as-default": "off",
     "import/extensions": "off",
     "import/prefer-default-export": "off",
-
     "jsx-a11y/href-no-hash": "off",
     "jsx-a11y/anchor-is-valid": "off",
-
     "no-case-declarations": "off",
     "react/sort-comp": "off",
     "react/style-prop-object": "off",
@@ -77,6 +79,7 @@
     "no-nested-ternary": "off",
     "no-console": "off",
     "import/no-extraneous-dependencies": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "no-useless-escape": "off"
   }
 }

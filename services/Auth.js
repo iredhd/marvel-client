@@ -40,10 +40,9 @@ const Auth = {
 
     cookies.set('token', token);
   },
-  clearToken: () => new Promise(resolve => {
+  clearToken: () => {
     cookies.remove('token');
-    resolve();
-  }),
+  },
   decodeToken: (ctx) => {
     const token = ctx.req.headers.cookie?.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, '$1');
 

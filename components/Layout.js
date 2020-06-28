@@ -15,6 +15,7 @@ const PageLayout = createGlobalStyle`
   #__next {
     height: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
     background-image: url(${background});
     background-repeat: no-repeat;
     background-size: cover;

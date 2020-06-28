@@ -10,7 +10,9 @@ const Translations = {
     passwordIsRequired: 'Password is required to login.',
     wellcomeBack: 'Wellcome back',
     logout: 'Logout',
-    marvelFetchError: 'Error calling the Marvel API. Please, try again later.'
+    marvelFetchError: 'Error calling the Marvel API. Please, try again later.',
+    noComicsFound: 'No comics found for this hero.',
+    noDescriptionFound: 'No description found for this hero.'
   },
   'pt-BR': {
     userOrEmail: 'Usuário ou e-mail',
@@ -23,7 +25,9 @@ const Translations = {
     passwordIsRequired: 'Senha é necessária para o login.',
     wellcomeBack: 'Bem-vindo de volta',
     logout: 'Sair',
-    marvelFetchError: 'Erro na consulta com a API da Marvel. Por favor, tente novamente mais tarde.'
+    marvelFetchError: 'Erro na consulta com a API da Marvel. Por favor, tente novamente mais tarde.',
+    noComicsFound: 'Não foram encontrados comics para este herói.',
+    noDescriptionFound: 'Nenhuma descrição encontrada para este herói.'
   }
 };
 

@@ -11,6 +11,7 @@ import { Marvel } from '../../../services';
 import { Panel } from '../../../components';
 
 const Comics = ({ comics }) => {
+  const totalPages = Math.ceil(comics.total / Marvel.ITEMS_PER_PAGE);
   const heroId = useSelector(({ user }) => user.heroId);
 
   const [comicsToShow, setComicsToShow] = useState(comics.results);
@@ -83,7 +84,7 @@ const Comics = ({ comics }) => {
             <Pagination
               siblingCount={0}
               boundaryCount={1}
-              count={comics.total / comics.limit}
+              count={totalPages}
               color="primary"
               page={page}
               onChange={handlePaginate}

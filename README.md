@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="http://keezag.iredhd.dev">
-    <img alt="Trailspot" src="https://res.cloudinary.com/iredhd/image/upload/v1593402949/keezag/keezag_phqxq8.svg" width=300 />
+    <img alt="Keezag" src="https://res.cloudinary.com/iredhd/image/upload/v1593402949/keezag/keezag_phqxq8.svg" width=300 />
   </a>
 </h1>
 
@@ -15,6 +15,10 @@ The content of this repository consists of a test of technical knowledge in fron
 The application consists of a system with two screens, login and home. Where after logged in, the user will be able to see details about his Marvel hero and his comics.
 
 To test the project already configured and running [click here.](http://keezag.iredhd.dev)
+
+<img alt="Login Image" src="https://res.cloudinary.com/iredhd/image/upload/v1593406252/keezag/keezag-login_csuvdg.png"/>
+
+<img alt="Home Image" src="https://res.cloudinary.com/iredhd/image/upload/v1593406191/keezag/keezag-home_saygz2.png"/>
 
 ## Technologies
 - [React](https://github.com/facebook/react)

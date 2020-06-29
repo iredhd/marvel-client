@@ -23,7 +23,7 @@ const Translations = {
     internalError: 'Erro interno, por favor entre em contato com o suporte.',
     userOrEmailIsRequired: 'Usuário/e-mail é necessário para o login.',
     passwordIsRequired: 'Senha é necessária para o login.',
-    wellcomeBack: 'Bem-vindo de volta',
+    wellcomeBack: 'Bem-vindo(a) de volta',
     logout: 'Sair',
     marvelFetchError: 'Erro na consulta com a API da Marvel. Por favor, tente novamente mais tarde.',
     noComicsFound: 'Não foram encontrados comics para este herói.',

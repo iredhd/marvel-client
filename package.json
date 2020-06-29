@@ -9,7 +9,7 @@
     "lint": "standard",
     "commit": "yarn lint && git-cz",
     "release": "release-it --no-npm.publish",
-    "test": "cypress open",
+    "test": "cypress run",
     "docs": "styleguidist server",
     "docs:build": "styleguidist build"
   },

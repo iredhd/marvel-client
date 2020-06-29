@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { Paper, useTheme, useMediaQuery, Divider, ListItem, ListItemAvatar, Avatar, ListItemText, Typography, List, Link, CircularProgress } from '@material-ui/core'
 import { Pagination } from '@material-ui/lab'
 import moment from 'moment'
@@ -38,16 +38,31 @@ const HomeComics = ({ comics }) => {
   const [isLoading, setIsLoading] = useState(false)
 
   const [page, setPage] = useState(1)
+  const [cache, setCache] = useState({})
 
   const handlePaginate = useCallback(async (_, value) => {
     setPage(value)
-    setIsLoading(true)
+
+    if (Object.keys(cache).includes(value.toString())) {
+      return setComicsToShow(cache[value.toString()])
+    } else {
+      setIsLoading(true)
+    }
 
     const { error, ...newCommics } = await Marvel.getComics(heroId, Marvel.ITEMS_PER_PAGE, (value - 1) * Marvel.ITEMS_PER_PAGE)
 
     setIsLoading(false)
     setComicsToShow(newCommics.results)
   })
+
+  useEffect(() => {
+    setCache({
+      ...cache,
+      [page]: [
+        ...comicsToShow
+      ]
+    })
+  }, [comicsToShow])
 
   const renderItem = (comic, index) => (
     <React.Fragment key={comic.id.toString()}>

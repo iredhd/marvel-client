@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled, { createGlobalStyle } from 'styled-components';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled, { createGlobalStyle } from 'styled-components'
 
-import Head from './Head';
-import LanguageSwitcher from './LanguageSwitcher';
-import background from '../assets/spider-man-bg.jpg';
+import Head from './Head'
+import LanguageSwitcher from './LanguageSwitcher'
+import background from '../assets/spider-man-bg.jpg'
 
 const PageLayout = createGlobalStyle`
   body {
@@ -21,7 +21,7 @@ const PageLayout = createGlobalStyle`
     background-size: cover;
     background-position: center;
   }
-`;
+`
 
 const StyledContainer = styled.div`
   display: flex;
@@ -30,7 +30,7 @@ const StyledContainer = styled.div`
   flex-direction: column;
   width: 100%;
   min-height: 100%;
-`;
+`
 
 const Layout = ({ children }) => (
   <>
@@ -41,10 +41,10 @@ const Layout = ({ children }) => (
       <LanguageSwitcher />
     </StyledContainer>
   </>
-);
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired
-};
+}
 
-export default Layout;
+export default Layout

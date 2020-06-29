@@ -1,11 +1,11 @@
-import { ActionTypes } from '../actions';
+import { ActionTypes } from '../actions'
 
 const initialState = {
   name: null,
   email: null,
   user: null,
-  heroId: null,
-};
+  heroId: null
+}
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -15,15 +15,15 @@ const reducer = (state = initialState, action) => {
         name: action.payload.name,
         email: action.payload.email,
         user: action.payload.user,
-        heroId: action.payload.heroId,
-      };
+        heroId: action.payload.heroId
+      }
     case ActionTypes.CLEAR_USER:
       return {
-        ...initialState,
-      };
+        ...initialState
+      }
     default:
-      return state;
+      return state
   }
-};
+}
 
-export default reducer;
+export default reducer

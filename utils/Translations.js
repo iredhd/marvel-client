@@ -29,6 +29,6 @@ const Translations = {
     noComicsFound: 'Não foram encontrados comics para este herói.',
     noDescriptionFound: 'Nenhuma descrição encontrada para este herói.'
   }
-};
+}
 
-export default Translations;
+export default Translations

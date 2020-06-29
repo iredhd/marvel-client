@@ -1,12 +1,12 @@
-import React from 'react';
-import { Grid, Paper } from '@material-ui/core/';
-import { motion } from 'framer-motion';
+import React from 'react'
+import { Grid, Paper } from '@material-ui/core/'
+import { motion } from 'framer-motion'
 
-import { Layout } from '../../components';
-import LoginGrid from './components/LoginGrid';
-import LoginForm from './components/LoginForm';
-import { Auth } from '../../services';
-import { Animations } from '../../utils';
+import { Layout } from '../../components'
+import LoginGrid from './components/LoginGrid'
+import LoginForm from './components/LoginForm'
+import { Auth } from '../../services'
+import { Animations } from '../../utils'
 
 const Login = () => {
   const panelAnimation = {
@@ -17,10 +17,10 @@ const Login = () => {
         ...Animations.spring,
         delay: 0.5,
         staggerChildren: 0.075,
-        delayChildren: 0.7,
-      },
-    },
-  };
+        delayChildren: 0.7
+      }
+    }
+  }
 
   return (
     <Layout>
@@ -34,8 +34,8 @@ const Login = () => {
         >
           <AnimatedPaper
             elevation={3}
-            initial="hidden"
-            animate="visible"
+            initial='hidden'
+            animate='visible'
             variants={panelAnimation}
           >
             <LoginForm />
@@ -43,17 +43,17 @@ const Login = () => {
         </Grid>
       </LoginGrid>
     </Layout>
-  );
-};
+  )
+}
 
-const AnimatedPaper = motion.custom(Paper);
+const AnimatedPaper = motion.custom(Paper)
 
 export const getServerSideProps = async (ctx) => {
-  await Auth.handleAuthSSR(ctx);
+  await Auth.handleAuthSSR(ctx)
 
   return {
     props: {}
-  };
-};
+  }
+}
 
-export default Login;
+export default Login

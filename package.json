@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "commit": "git-cz",
+    "commit": "standard && git-cz",
     "release": "release-it --no-npm.publish",
     "test": "jest --watch",
     "coverage": "jest --coverage"
@@ -56,6 +56,7 @@
     "eslint-plugin-react-hooks": "^4.0.4",
     "git-cz": "^4.7.0",
     "jest": "^26.1.0",
-    "release-it": "^13.6.3"
+    "release-it": "^13.6.3",
+    "standard": "^14.3.4"
   }
 }

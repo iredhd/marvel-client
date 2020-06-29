@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const HomeContainer = styled.div`
   padding-top: 70px;
@@ -12,6 +12,6 @@ const HomeContainer = styled.div`
   @media(max-width: 960px) {
     flex-direction: column;
   }
-`;
+`
 
-export default HomeContainer;
+export default HomeContainer

@@ -4,5 +4,5 @@ module.exports = {
   clearMocks: true,
   collectCoverage: true,
   collectCoverageFrom: ['components/**/*.js', 'pages/**/*.js'],
-  coverageReporters: ['lcov', 'text'],
-};
+  coverageReporters: ['lcov', 'text']
+}

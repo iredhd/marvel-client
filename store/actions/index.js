@@ -3,4 +3,4 @@ export const ActionTypes = {
   CLEAR_USER: 'CLEAR_USER',
   REGISTER_TOKEN: 'REGISTER_TOKEN',
   CLEAR_TOKEN: 'CLEAR_TOKEN'
-};
+}

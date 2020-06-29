@@ -1,22 +1,22 @@
-import React from 'react';
-import { Paper,  Avatar, Typography, makeStyles, Link } from '@material-ui/core';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import i18n from 'i18n-js';
+import React from 'react'
+import { Paper, Avatar, Typography, makeStyles, Link } from '@material-ui/core'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import i18n from 'i18n-js'
 
-import { Marvel } from '../../../services';
-import { Panel } from '../../../components';
-import { Animations } from '../../../utils';
+import { Marvel } from '../../../services'
+import { Panel } from '../../../components'
+import { Animations } from '../../../utils'
 
 const useStyles = makeStyles((theme) => ({
   large: {
     width: theme.spacing(15),
-    height: theme.spacing(15),
-  },
-}));
+    height: theme.spacing(15)
+  }
+}))
 
 const HomeHero = ({ hero }) => {
-  const classes = useStyles();
+  const classes = useStyles()
 
   const panelAnimation = {
     hidden: {
@@ -28,10 +28,10 @@ const HomeHero = ({ hero }) => {
         ...Animations.spring,
         delay: 0.5,
         staggerChildren: 0.075,
-        delayChildren: 0.7,
-      },
-    },
-  };
+        delayChildren: 0.7
+      }
+    }
+  }
 
   return (
     <Panel
@@ -39,8 +39,8 @@ const HomeHero = ({ hero }) => {
       xs={12}
       sm={5}
       variants={panelAnimation}
-      initial="hidden"
-      animate="visible"
+      initial='hidden'
+      animate='visible'
     >
       <StyledPaper
         elevation={3}
@@ -52,27 +52,27 @@ const HomeHero = ({ hero }) => {
         />
         <Link
           href={Marvel.handleDetailsLink(hero.urls)}
-          target="_blank"
+          target='_blank'
         >
           <Typography
-            variant="h4"
-            align="center"
+            variant='h4'
+            align='center'
             gutterBottom
           >
             {hero.name}
           </Typography>
         </Link>
         <Typography
-          variant="body2"
-          align="center"
+          variant='body2'
+          align='center'
           gutterBottom
         >
           {hero.description ? hero.description : i18n.t('noDescriptionFound')}
         </Typography>
       </StyledPaper>
     </Panel>
-  );
-};
+  )
+}
 
 const StyledPaper = styled(Paper)`
   padding: 10px;
@@ -80,11 +80,11 @@ const StyledPaper = styled(Paper)`
   align-items: center;
   display: flex;
   flex-direction: column;
-`;
+`
 
 const StyledAvatar = styled(Avatar)`
   margin-bottom: 10px;
-`;
+`
 
 HomeHero.propTypes = {
   hero: PropTypes.shape({
@@ -96,6 +96,6 @@ HomeHero.propTypes = {
     }),
     urls: PropTypes.array
   }).isRequired
-};
+}
 
-export default HomeHero;
+export default HomeHero

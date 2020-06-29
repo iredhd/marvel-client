@@ -1,7 +1,7 @@
-import Translations from './Translations';
-import Animations from './Animations';
+import Translations from './Translations'
+import Animations from './Animations'
 
 export {
   Translations,
   Animations
-};
+}

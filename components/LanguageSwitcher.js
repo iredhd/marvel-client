@@ -76,6 +76,9 @@ const StyledSelect = styled(Select)`
     color: white;
     border-color: white;
   }
+  :before {
+    border-bottom: 1px solid rgba(255,255,255, 0.4) !important;
+  }
   .MuiSelect-icon {
     color: white;
   }

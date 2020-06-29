@@ -41,6 +41,7 @@ To read the documentation for all project components [click here.](http://keezag
 - [Redux Thunk](https://github.com/reduxjs/redux-thunk)
 - [Redux Persist](https://github.com/rt2zz/redux-persist)
 - [Redux Persist Transform Encrypt](https://github.com/maxdeviant/redux-persist-transform-encrypt)
+- [Cypress](https://github.com/cypress-io/cypress)
 
 ## Installation
 ```

@@ -39,6 +39,7 @@ const HomeAppBar = () => {
             {name ? `${i18n.t('welcomeBack')}, ${name}` : ''}
           </StyledTitle>
           <Button
+            id='logout'
             color='inherit'
             onClick={handleLogout}
           >

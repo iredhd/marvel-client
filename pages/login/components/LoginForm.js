@@ -106,10 +106,12 @@ const LoginForm = () => {
         </Alert>
       </Collapse>
       <LoginInput
+        id='userOrEmail'
         name='userOrEmail'
         label={i18n.t('userOrEmail')}
       />
       <LoginInput
+        id='password'
         name='password'
         type='password'
         label={i18n.t('password')}

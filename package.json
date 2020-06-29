@@ -8,8 +8,7 @@
     "start": "next start",
     "commit": "standard && git-cz",
     "release": "release-it --no-npm.publish",
-    "test": "jest --watch",
-    "coverage": "jest --coverage",
+    "test": "cypress open",
     "docs": "styleguidist server",
     "docs:build": "styleguidist build"
   },
@@ -49,13 +48,10 @@
   "devDependencies": {
     "@babel/core": "^7.10.3",
     "@babel/plugin-proposal-optional-chaining": "^7.10.3",
-    "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/react": "^10.4.3",
-    "@types/jest": "^26.0.3",
-    "babel-jest": "^26.1.0",
     "babel-loader": "^8.1.0",
+    "cypress": "^4.9.0",
     "git-cz": "^4.7.0",
-    "jest": "^26.1.0",
     "react-styleguidist": "^11.0.8",
     "release-it": "^13.6.3",
     "standard": "^14.3.4"

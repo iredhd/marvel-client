@@ -38,7 +38,7 @@ const LanguageSwitcher = () => {
   return (
     <LanguageSwitcherContainer>
       <StyledLaguageIcon />
-      <Select
+      <StyledSelect
         value={actualLanguage}
         onChange={handleChange}
       >
@@ -50,7 +50,7 @@ const LanguageSwitcher = () => {
             {item.toUpperCase()}
           </MenuItem>
         ))}
-      </Select>
+      </StyledSelect>
     </LanguageSwitcherContainer>
   )
 }
@@ -68,6 +68,17 @@ const LanguageSwitcherContainer = styled.div`
 
 const StyledLaguageIcon = styled(LanguageIcon)`
   margin-right: 10px;
+  color: white;
+`
+
+const StyledSelect = styled(Select)`
+  .MuiInput-input {
+    color: white;
+    border-color: white;
+  }
+  .MuiSelect-icon {
+    color: white;
+  }
 `
 
 export default LanguageSwitcher

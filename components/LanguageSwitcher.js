@@ -31,7 +31,7 @@ const LanguageSwitcher = () => {
 
   useEffect(() => {
     if (!actualLanguage) {
-      setLanguage(navigatorLang)
+      setLanguage(options.includes(navigatorLang) ? navigatorLang : 'en')
     }
   }, [])
 

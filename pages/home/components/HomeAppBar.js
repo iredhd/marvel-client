@@ -33,7 +33,7 @@ const HomeAppBar = () => {
           <StyledTitle
             variant='h6'
           >
-            {name ? `${i18n.t('wellcomeBack')}, ${name}` : ''}
+            {name ? `${i18n.t('welcomeBack')}, ${name}` : ''}
           </StyledTitle>
           <Button
             color='inherit'

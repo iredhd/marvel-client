@@ -14,7 +14,7 @@ const Translations = {
     noComicsFound: 'No comics found for this hero.',
     noDescriptionFound: 'No description found for this hero.'
   },
-  'pt-BR': {
+  'pt-br': {
     userOrEmail: 'Usuário ou e-mail',
     password: 'Senha',
     login: 'Entrar',

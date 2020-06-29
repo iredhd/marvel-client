@@ -1,14 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import PropTypes from 'prop-types';
-import i18n from 'i18n-js';
 import axios from 'axios';
 import md5 from 'md5';
-import moment from 'moment';
+import i18n from 'i18n-js';
 
-import { Translations } from '../utils';
 import { store, persistor } from '../store';
+import { Translations } from '../utils';
 
 axios.defaults.baseURL = 'https://gateway.marvel.com:443/v1/public';
 axios.interceptors.request.use((config) => {
@@ -25,16 +24,11 @@ axios.interceptors.request.use((config) => {
   };
 });
 
+i18n.translations = {
+  ...Translations
+};
+
 const MyApp = ({ Component, pageProps }) => {
-  i18n.translations = {
-    ...Translations
-  };
-
-  useEffect(() => {
-    i18n.locale = navigator.language;
-    moment.locale(navigator.language.toLowerCase());
-  }, []);
-
   return (
     <Provider store={store}>
       <PersistGate

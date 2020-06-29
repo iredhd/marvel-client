@@ -12,6 +12,9 @@ import { Marvel } from '../../../services'
 import { Panel } from '../../../components'
 import { Animations } from '../../../utils'
 
+/**
+ * Comics list with styles and pagination
+ */
 const HomeComics = ({ comics }) => {
   const theme = useTheme()
   const upMd = useMediaQuery(theme.breakpoints.up('md'))
@@ -183,6 +186,7 @@ const EmptyContainer = styled.div`
 `
 
 HomeComics.propTypes = {
+  /* Comics to show on the list */
   comics: PropTypes.shape({
     total: PropTypes.number,
     limit: PropTypes.number,

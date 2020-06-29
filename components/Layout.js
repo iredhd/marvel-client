@@ -4,8 +4,10 @@ import styled, { createGlobalStyle } from 'styled-components'
 
 import Head from './Head'
 import LanguageSwitcher from './LanguageSwitcher'
-import background from '../assets/spider-man-bg.jpg'
 
+/**
+ * Global page layout
+ */
 const PageLayout = createGlobalStyle`
   body {
     height: 100vh;
@@ -16,7 +18,7 @@ const PageLayout = createGlobalStyle`
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    background-image: url(${background});
+    background-image: url('/spider-man-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -44,6 +46,7 @@ const Layout = ({ children }) => (
 )
 
 Layout.propTypes = {
+  /** Children to render inside of global layout */
   children: PropTypes.node.isRequired
 }
 

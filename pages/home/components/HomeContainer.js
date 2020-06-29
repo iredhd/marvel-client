@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 
+/**
+ * Default styled home container
+ */
 const HomeContainer = styled.div`
   padding-top: 70px;
   padding-bottom: 50px;

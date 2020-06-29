@@ -4,6 +4,9 @@ import Modal from '@material-ui/core/Modal'
 import { CircularProgress, Paper } from '@material-ui/core'
 import PropTypes from 'prop-types'
 
+/**
+ * Global loading modal
+ */
 const LoadingModal = ({ isVisible }) => {
   return (
     <StyledModal
@@ -37,6 +40,7 @@ LoadingModal.defaultProps = {
 }
 
 LoadingModal.propTypes = {
+  /** Control of modal visibility */
   isVisible: PropTypes.bool
 }
 

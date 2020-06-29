@@ -5,6 +5,7 @@
 </h1>
 
 <p align="center">
+  <a href="#documentation">Documentation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#Configuration">Configuration</a>
@@ -19,6 +20,9 @@ To test the project already configured and running [click here.](http://keezag.i
 <img alt="Login Image" src="https://res.cloudinary.com/iredhd/image/upload/v1593406252/keezag/keezag-login_csuvdg.png"/>
 
 <img alt="Home Image" src="https://res.cloudinary.com/iredhd/image/upload/v1593406191/keezag/keezag-home_saygz2.png"/>
+
+## Documentation
+To read the documentation for all project components [click here.](http://keezag.iredhd.dev/docs/index.html)
 
 ## Technologies
 - [React](https://github.com/facebook/react)

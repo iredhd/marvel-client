@@ -3,6 +3,9 @@ import { TextField } from '@material-ui/core'
 import { useField } from '@unform/core'
 import PropTypes from 'prop-types'
 
+/**
+ * Adaptade Input with Unform integration
+ */
 const Input = ({ name, ...rest }) => {
   const inputRef = useRef(null)
 
@@ -36,6 +39,7 @@ const Input = ({ name, ...rest }) => {
 }
 
 Input.propTypes = {
+  /** Input name on Unform context */
   name: PropTypes.string.isRequired
 }
 

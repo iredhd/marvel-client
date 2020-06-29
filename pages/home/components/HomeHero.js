@@ -15,6 +15,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
+/**
+ * Hero styled details
+ */
 const HomeHero = ({ hero }) => {
   const classes = useStyles()
 
@@ -87,6 +90,7 @@ const StyledAvatar = styled(Avatar)`
 `
 
 HomeHero.propTypes = {
+  /* Hero to show in component */
   hero: PropTypes.shape({
     name: PropTypes.string.isRequired,
     description: PropTypes.string,

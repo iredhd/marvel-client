@@ -15,6 +15,9 @@ import { Auth } from '../../../services'
 import { storeData } from '../../../store/actions/User'
 import { LoadingModal } from '../../../components'
 
+/**
+ * Login form integrated with Unform and REDUX
+ */
 const LoginForm = () => {
   const dispatch = useDispatch()
   const router = useRouter()

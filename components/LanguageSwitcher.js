@@ -15,6 +15,9 @@ const actualLanguage = cookie.get('language')
 i18n.locale = actualLanguage
 moment.locale(actualLanguage)
 
+/**
+ * System language selector
+ */
 const LanguageSwitcher = () => {
   const navigatorLang = navigator.language.toLowerCase()
 

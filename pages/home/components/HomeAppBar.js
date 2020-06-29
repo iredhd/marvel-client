@@ -7,6 +7,9 @@ import i18n from 'i18n-js'
 import { logout } from '../../../store/actions/User'
 import { LoadingModal } from '../../../components'
 
+/**
+ * Home navbar with name and logout button
+ */
 const HomeAppBar = () => {
   const dispatch = useDispatch()
   const name = useSelector(({ user }) => user.name)

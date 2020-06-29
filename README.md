@@ -1,30 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  <a href="http://keezag.iredhd.dev">
+    <img alt="Trailspot" src="https://res.cloudinary.com/iredhd/image/upload/v1593402949/keezag/keezag_phqxq8.svg" width=300 />
+  </a>
+</h1>
 
-## Getting Started
+<p align="center">
+  <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#Configuration">Configuration</a>
+</p>
 
-First, run the development server:
+The content of this repository consists of a test of technical knowledge in front-end.
 
-```bash
-npm run dev
-# or
+The application consists of a system with two screens, login and home. Where after logged in, the user will be able to see details about his Marvel hero and his comics.
+
+To test the project already configured and running [click here.](http://keezag.iredhd.dev)
+
+## Technologies
+- [React](https://github.com/facebook/react)
+- [NextJS](https://github.com/vercel/next.js)
+- [Prop-Types](https://github.com/facebook/prop-types)
+- [i18n-js](https://github.com/fnando/i18n-js)
+- [Unform](https://github.com/Rocketseat/unform)
+- [Yup](https://github.com/jquense/yup)
+- [Material UI](https://github.com/mui-org/material-ui)
+- [Axios](https://github.com/axios/axios)
+- [Styled-Components](https://github.com/styled-components/styled-components)
+- [Framer Motion](https://github.com/framer/motion)
+- [JWT](https://github.com/auth0/node-jsonwebtoken)
+- [StandardJS](https://github.com/standard/standard)
+- [Redux](https://github.com/reduxjs/redux)
+- [Redux Thunk](https://github.com/reduxjs/redux-thunk)
+- [Redux Persist](https://github.com/rt2zz/redux-persist)
+- [Redux Persist Transform Encrypt](https://github.com/maxdeviant/redux-persist-transform-encrypt)
+
+## Installation
+```
+git clone https://gitlab.com/iredhd/keezag.git
+cd keezag
+cp .env.example .env
+yarn
 yarn dev
 ```
+Now access http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuration
+Please, before executing `yarn dev`, fill in the environment variables inside the `.env` file.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| VARIABLE  |  DESCRIPTION  |
+| ------------------- | ------------------- |
+| REACT_APP_SECRET_KEY |  Secret key for REDUX and JWT encrypt |
+| REACT_APP_MARVEL_API_KEY |  Marvel public API key |
+| REACT_APP_MARVEL_PRIVATE_KEY |  Marvel private API key |

@@ -8,7 +8,7 @@
   <a href="#documentation">Documentation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#Configuration">Configuration</a>
+  <a href="#configuration">Configuration</a>
 </p>
 
 The content of this repository consists of a test of technical knowledge in front-end.

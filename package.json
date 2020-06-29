@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "commit": "standard && git-cz",
+    "lint": "standard",
+    "commit": "yarn lint && git-cz",
     "release": "release-it --no-npm.publish",
     "test": "cypress open",
     "docs": "styleguidist server",
@@ -15,6 +16,10 @@
   "standard": {
     "ignore": [
       "/public/*"
+    ],
+    "globals": [
+      "cy",
+      "it"
     ]
   },
   "dependencies": {

@@ -18,7 +18,9 @@ it('dispatch user correctly on logout', () => {
 
   const emptyUserState = {}
 
-  Object.keys(user).map(item => emptyUserState[item] = null)
+  Object.keys(user).map(item => {
+    emptyUserState[item] = null
+  })
 
   cy
     .window()

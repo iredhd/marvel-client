@@ -24,7 +24,9 @@ it('login and logout all users correctly using user', () => {
 
     const emptyUserState = {}
 
-    Object.keys(userToTest).map(item => emptyUserState[item] = null)
+    Object.keys(userToTest).map(item => {
+      emptyUserState[item] = null
+    })
 
     cy
       .window()

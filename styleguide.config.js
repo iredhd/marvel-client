@@ -6,7 +6,7 @@ module.exports = {
   ignore: [
     'components/index.js'
   ],
-  title: 'Keezag Components Doc',
+  title: 'Marvel Client Components Doc',
   styleguideDir: 'public/docs',
   webpackConfig: {
     module: {

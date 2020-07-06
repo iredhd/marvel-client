@@ -9,7 +9,8 @@
   <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#configuration">Configuration</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#usage">Usage</a>
+  <a href="#usage">Usage</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#license">License</a>
 </p>
 
 <p align="center">
@@ -81,3 +82,6 @@ Please, use one of this users to login:
 |  peter |    peter_raven972@atink.com      |  357473  |
 | summer |  summer_stubbs7682@zorer.org     |  611885  |
 | nicole |  Nicole_Rogers152@bretoux.com    |  361887  |
+
+## License
+This project is under the MIT license. See the [LICENSE](https://github.com/iredhd/marvel-client/blob/master/LICENSE) for more information.

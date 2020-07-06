@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="http://marvel-client.iredhd.dev">
-    <img alt="Marvel Client" src="https://res.cloudinary.com/iredhd/image/upload/v1594048914/marvel-client/logo.png" width=300 />
+    <img alt="Marvel Client" src="https://res.cloudinary.com/iredhd/image/upload/v1594049613/marvel-client/logo.png" width=300 />
   </a>
 </h1>
 
@@ -8,7 +8,8 @@
   <a href="#documentation">Documentation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#installation">Installation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#configuration">Configuration</a>
+  <a href="#configuration">Configuration</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#usage">Usage</a>
 </p>
 
 The application consists of a system with two screens, login and home. Where after logged in, the user will be able to see details about his Marvel hero and his comics.
@@ -59,3 +60,14 @@ Please, before executing `yarn dev`, fill in the environment variables inside th
 | REACT_APP_SECRET_KEY |  Secret key for REDUX and JWT encrypt |
 | REACT_APP_MARVEL_API_KEY |  Marvel public API key |
 | REACT_APP_MARVEL_PRIVATE_KEY |  Marvel private API key |
+
+## Usage
+Please, use one of this users to login:
+
+|  USER  |               E-MAIL             | PASSWORD |
+| ------ | -------------------------------- | -------- |
+|  bryon |   bryon_hooper4381@muall.tech    |  714941  |
+|  adina |    adina_yang1351@yahoo.com      |  315492  |
+|  peter |    peter_raven972@atink.com      |  357473  |
+| summer |  summer_stubbs7682@zorer.org     |  611885  |
+| nicole |  Nicole_Rogers152@bretoux.com    |  361887  |

@@ -20,8 +20,6 @@
   <a href="https://github.com/iredhd/marvel-client/issues">
     <img alt="Repository issues" src="https://img.shields.io/github/issues/iredhd/marvel-client.svg">
   </a>
-  
-  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/y/iredhd/marvel-client.svg">
 </p>
 
 The application consists of a system with two screens, login and home. Where after logged in, the user will be able to see details about his Marvel hero and his comics.
